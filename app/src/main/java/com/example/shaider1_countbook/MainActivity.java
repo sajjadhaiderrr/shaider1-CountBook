@@ -96,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
                             Counter myObject = new Counter(Counter, Desc, intCount);
                             androidCounters.add(myObject);
                             counterAdapter.notifyDataSetChanged();
+                            final TextView totalCounters = (TextView) findViewById(R.id.totalCounters);
+                            totalCounters.setText("You have " + counterAdapter.getCount() + " counter(s)");
                             saveInFile();
                             dialog.dismiss();
                         }
@@ -126,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
         counterAdapter = new CounterAdapter(this, androidCounters);
         listView.setAdapter(counterAdapter);
 
+        final TextView totalCounters = (TextView) findViewById(R.id.totalCounters);
+        totalCounters.setText("You have " + counterAdapter.getCount() + " counter(s)");
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -149,6 +154,8 @@ public class MainActivity extends AppCompatActivity {
                         saveInFile();
                         Intent eventIntent = new Intent(MainActivity.this, MainActivity.class);
                         counterAdapter.notifyDataSetChanged();
+                        final TextView totalCounters = (TextView) findViewById(R.id.totalCounters);
+                        totalCounters.setText("You have " + counterAdapter.getCount() + " counter(s)");
                         startActivity(eventIntent);
 
                     }
