@@ -44,4 +44,12 @@
         android:layout_alignParentRight="true"
         app:backgroundTint="@android:color/background_dark"
         app:srcCompat="@android:drawable/ic_input_add"></android.support.design.widget.FloatingActionButton>
+
+    <TextView
+        android:id="@+id/totalCounters"
+        android:text="Total Counters: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        />
 </RelativeLayout>
